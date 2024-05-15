@@ -306,24 +306,28 @@ h6 {
 }
 
 .portfolio-button {
-    position: absolute;
-    top: 50%;
-    background-color: transparent;
-    color: #525252;
-    padding: 10px 20px;
-    cursor: pointer;
-    z-index: 1;
-    border: none;
-    outline: none;
-    font-size: 35px;
-    transition: color 0.3s ease;
+    cursor: default;
+}
+
+.portfolio-button {
+position: absolute;
+top: 50%;
+background-color: transparent;
+color: #525252;
+padding: 10px 20px;
+cursor: pointer;
+z-index: 1;
+border: none;
+outline: none;
+font-size: 35px;
+transition: color 0.3s ease;
 }
 
 .portfolio-button-left {
-    left: 10px;
+left: 10px;
 }
 
 .portfolio-button-right {
-    right: 10px;
+right: 10px;
 }
 }
