@@ -304,25 +304,4 @@ h6 {
     max-width: 100px;
     height: auto;
 }
-
-.portfolio-button {
-    cursor: default;
-    position: absolute;
-    top: 50%;
-    color: #525252;
-    padding: 8px 12px;
-    background-color: transparent;
-    z-index: 1;
-    border: none;
-    outline: none;
-    font-size: 20px;
-}
-
-.portfolio-button-left {
-    left: 5px;
-}
-
-.portfolio-button-right {
-    right: 5px;
-}
 }

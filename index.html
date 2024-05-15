@@ -69,92 +69,63 @@
     </div>
 
     <!-- Portfolio -->
-    <div id="portfolio" class="container-fluid">
+    <div id="portfolio">
         <h4>PORTFOLIO</h4><br><br>
         <div class="row">
             <div class="col-md-6" style="margin-bottom: 10px; text-align: center;">
-                <div class="carousel-container">
-                    <div class="carousel">
+                <div class="slide-container">
+                    <div class="slide">
                         <img src="assets/Kontur.jpeg" alt="Kontur Design" class="active">
                         <img src="assets/OTP.jpeg" alt="One Time Password Generator">
                         <!-- <img src="assets/Age Calculator.jpeg" alt="Age Calculator"> -->
                     </div>
                 </div>
-                <div class="portfolio-button portfolio-button-left" onclick="moveCarousel(-1)">❮</div>
-                <div class="portfolio-button portfolio-button-right" onclick="moveCarousel(1)">❯</div>
             </div>
         </div>
     </div>
 
     <style>
-    #portfolio {
-        position: relative;
-    }
-    
-    .carousel-container {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .portfolio-button {
-        position: absolute;
-        top: 50%;
-        background-color: transparent;
-        color: #525252;
-        padding: 10px 20px;
-        cursor: pointer;
-        z-index: 1;
-        border: none;
-        outline: none;
-        font-size: 35px;
-        transition: color 0.3s ease;
-    }
-    
-    .portfolio-button:hover {
-        color: #525252;
-    }
-    
-    .portfolio-button-left {
-        left: 10px;
-    }
-    
-    .portfolio-button-right {
-        right: 10px;
-    }
-    
-    .carousel {
-        display: flex;
-        transition: transform 0.5s ease;
-        width: 100%;
-    }
-    
-    .carousel img {
-        display: none;
-        width: 80%;
-        height: auto;
-        max-width: auto;
-        max-height: 600px;
-        margin: 0 auto;
-    }
-
-    .carousel img.active {
-        display: block;
-    }   
-
+        #portfolio {
+            position: relative;
+        }
+        
+        .slide-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide img {
+            display: none;
+            width: 80%;
+            height: auto;
+            max-width: auto;
+            max-height: 600px;
+            margin: 0 auto;
+        }        
     </style>
-        </head>
-            <body>
+</head>
+<body>
 
-                <script>
-                    let currentImageIndex = 0;
-                    const images = document.querySelectorAll('.carousel img');
-                
-                    function moveCarousel(direction) {
-                        images[currentImageIndex].classList.remove('active');
-                        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-                        images[currentImageIndex].classList.add('active');
-                    }
-                </script>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slide")[0].getElementsByTagName("img");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // 3 Seconds
+        }
+        
+        function moveCarousel(n) {
+            showSlides(slideIndex += n);
+        }
+    </script>
 
     <!-- Contact -->
     <div id="contact" class="container-fluid text-center">
