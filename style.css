@@ -121,6 +121,7 @@ body {
     padding-top: 50px;
     padding-bottom: 100px;
     margin-top: 0px;
+    position: relative;
 }
 
 /* Footer */
@@ -304,26 +305,25 @@ h6 {
     height: auto;
 }
 
-.arrow-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-
-.arrow-button a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
+.portfolio-button {
+    position: absolute;
+    top: 50%;
     background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #525252;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    outline: none;
+    font-size: 35px;
+    transition: color 0.3s ease;
 }
 
-/* Adjust SVG Size */
-.arrow-button svg {
-    width: 24px;
-    height: 24px;
+.portfolio-button-left {
+    left: 10px;
+}
+
+.portfolio-button-right {
+    right: 10px;
 }
 }
