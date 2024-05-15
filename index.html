@@ -66,18 +66,87 @@
         <li><i class="fab fa-js"></i> JavaScript</li>
         <li><i class="fab fa-python"></i> Python</li>
     </ul>
-</div>
+    </div>
 
-<!-- Portfolio -->
-<div id="portfolio" class="container-fluid">
-    <h4>PORTFOLIO</h4><br><br>
-    <div class="row">
-        <div class="col-md-6" style="margin-bottom: 10px; text-align: center;">
-            <img src="assets/Kontur.jpeg" class="img-responsive" style="max-width: 100%; height: auto;" alt="Project 1">
-            <p>Kontur Design</p>
+    <!-- Portfolio -->
+    <div id="portfolio" class="container-fluid">
+        <h4>PORTFOLIO</h4><br><br>
+        <div class="row">
+            <div class="col-md-6" style="margin-bottom: 10px; text-align: center;">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <img src="assets/Kontur.jpeg" alt="Kontur Design">
+                        <img src="assets/OTP.jpeg" alt="One Time Password Generator">
+                        <img src="assets/Age Calculator.jpeg" alt="Age Calculator">
+                    </div>
+                    <div class="carousel-button carousel-button-left" onclick="moveCarousel(-1)">❮</div>
+                    <div class="carousel-button carousel-button-right" onclick="moveCarousel(1)">❯</div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+<style>
+.carousel-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #525252;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    outline: none;
+    font-size: 35px;
+    transition: color 0.3s ease;
+}
+
+.carousel-button:hover {
+    color: #525252;
+}
+
+.carousel-button-left {
+    left: 10px;
+}
+
+.carousel-button-right {
+    right: 10px;
+}
+
+    </style>
+        </head>
+            <body>
+
+<script>
+let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel img');
+const totalSlides = slides.length;
+const carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+
+function moveCarousel(direction) {
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    const offset = -currentIndex * carouselWidth;
+    document.querySelector('.carousel').style.transform = `translateX(${offset}px)`;
+}
+</script>
 
     <!-- Contact -->
     <div id="contact" class="container-fluid text-center">
